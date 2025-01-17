@@ -1,0 +1,40 @@
+name: alatheia-comodatos
+
+services:
+  db-comodatos:
+    image: mariadb:10.5
+    volumes:
+      - mariadbdata-comodatos:/var/lib/mysql
+    env_file:
+      - .env
+    environment:
+      MARIADB_ROOT_PASSWORD: 1234
+      MARIADB_DATABASE: "alatehia_comodatos" 
+      MARIADB_USER: "gty"
+      MARIADB_PASSWORD: "gty123"
+    ports:
+      - "3307:3306"
+    networks:
+      - alatheia-network
+
+  api-comodatos:
+    build:
+      context: .
+      dockerfile: local.Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - "8001:8000"
+    depends_on:
+      - db-comodatos
+    env_file:
+      - .env
+    networks:
+      - alatheia-network
+
+volumes:
+  mariadbdata-comodatos:
+
+networks:
+  alatheia-network:
+    external: true

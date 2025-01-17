@@ -1,0 +1,15 @@
+[project]
+name = "alatheia-comodatos-api"
+version = "0.1.0"
+description = "Api de comodatos para alatheia"
+readme = "README.md"
+requires-python = ">=3.12.8"
+dependencies = [
+    "django>=5.1.4",
+    "django-cors-headers>=4.6.0",
+    "djangorestframework>=3.15.2",
+    "drf-spectacular>=0.28.0",
+    "mysqlclient>=2.2.6",
+    "ruff>=0.8.6",
+    "whitenoise>=6.8.2",
+]
