@@ -18,8 +18,15 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # libraries
     "corsheaders",
-    'drf_spectacular',
+    "drf_spectacular",
     # own apps
+    "comodatos",
+    "instrumentos",
+    "monedas",
+    "ventas",
+    "reports",
+    "clientes",
+    "master_data",
 ]
 
 MIDDLEWARE = [
@@ -65,7 +72,7 @@ DATABASES = {
         "PORT": os.environ.get("DB_PORT"),
         "OPTIONS": {
             "charset": "utf8mb4",
-        }
+        },
     }
 }
 
@@ -122,7 +129,7 @@ CORS_ALLOW_HEADERS = (
 )
 
 SPECTACULAR_SETTINGS = {
-    "TITLE": "Alatheia Comisiones API",
+    "TITLE": "Alatheia Comodatos API",
     "DESCRIPTION": "API de comodatos para Alatheia",
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
